@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>商品详情页</title>
+		<link rel="stylesheet" type="text/css" href="css/zouni.css" />
+		<style type="text/css">
+			.picture {
+				margin-left: 200px;
+				margin-top: 20px;
+			}
+			.picture img{
+				border: 2px solid grey;
+				border-radius: 5/**/px;
+				overflow: hidden;
+			}
+			.name {
+				font-size: 25px;
+				margin-left: 700px;
+				margin-top: -400px;
+			}
+			
+			.price {
+				margin-left: 700px;
+				margin-top: 65px;
+				font-size: 20px;
+			}
+			
+			#add-to-cart {
+				font-size: 20px;
+				width: 170px;
+				height: 40px;
+				margin-left: 700px;
+				margin-top: 50px;
+				cursor: pointer;
+				color: white;
+				background: rgb(200, 0, 100);
+			}
+			
+			#add-to-cart:hover {
+				width: 190px;
+				margin-left: 690px;
+				background: white;
+				color: black;
+			}
+			
+			.desc {
+				margin-left: 700px;
+				margin-top: 65px;
+				color: grey;
+			}
+			
+			.cet {
+				margin-left: 700px;
+				margin-top: 15px;
+				color: grey;
+			}
+			
+			.goods {
+				margin-left: 700px;
+				margin-top: 15px;
+				color: grey;
+			}
+			
+			.price span {
+				color: red;
+				font-size: 25px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="header-container">
+				<a class="return" href="首页.html">返回首页</a>
+				<a class="shop" href="cart.html">购物车</a>
+				<a class="order" href="#.html">我的订单</a>
+			</div>
+			<script src="js/myajax.js" charset="utf-8"></script>
+			<ul id="cat" class="cat"></ul>
+			<script>
+				var oCat = document.querySelector('#cat');
+				myajax.get('http://h6.duchengjiu.top/shop/api_cat.php', {}, function(error, responseText) {
+					var json = JSON.parse(responseText);
+					var data = json.data;
+					for (var i = 0; i < data.length; i++) {
+						var obj = data[i];
+						oCat.innerHTML += `<li><a href="商品列表.html?cat_id=${obj.cat_id}">${obj.cat_name}</a></li>`;
+					}
+				});
+			</script>
+
+		</header>
+		<script src="js/mayajax.js" charset="utf-8"></script>
+		<main>
+			<ul id="goods"></ul>
+		</main>
+		<script>
+			var oGoods = document.querySelector('#goods');
+			var goods_id = getQueryString('goods_id');
+			console.log(goods_id);
+			myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
+				goods_id
+			}, function(err, responseText) {
+				var json = JSON.parse(responseText);
+				var obj = json.data[0];
+				console.log(json);
+				oGoods.innerHTML = `
+							      <div>
+							        <div class="picture"><img src="${obj.goods_thumb}"></div>
+							        <div class="name">${obj.goods_name}</div>
+							        <div class="desc">${obj.goods_desc}</div>
+							        <div class="cet">商品种类码:${obj.cat_id}</div>
+							        <div class="goods">商品码:${obj.goods_id}</div>
+							        <div class="price">价格:<span>${obj.price}</span></div>
+							        <div><input type="button" id="add-to-cart" value="添加到购物车"></div>
+							      </div>
+							      `;
+			});
+
+			document.body.onclick = function(event) {
+				myajax.post('http://h6.duchengjiu.top/shop/api_cart.php?token=' + localStorage.token, {
+						goods_id,
+						number: 1
+					},
+					function(err, responseText) {
+						var json = JSON.parse(responseText);
+						console.log(json);
+						if (json.code === 0) {
+							alert('添加到购物车成功');
+						}
+					})
+			}
+		</script>
+	</body>
+
+</html>

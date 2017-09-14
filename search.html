@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/zouni.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>Document</title>
+		<style type="text/css">
+			.box {
+				position: fixed;
+				right: 0px;
+				top: 50px;
+				z-index: 101;
+				width: 36px;
+				height: 600px;
+				background: grey;
+			}
+			
+			.box .fox1 {
+				width: 100%;
+				height: 45px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -160px 0px;
+			}
+			
+			.box .fox1 .aex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 12px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox1:hover .aex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox2 {
+				width: 100%;
+				height: 44px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -160px -44px;
+			}
+			
+			.box .fox2 .bex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 62px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox2:hover .bex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox3 {
+				width: 100%;
+				height: 44px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -120px 0px;
+			}
+			
+			.box .fox3 .cex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				color: black;
+				left: 36px;
+				top: 122px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox3:hover .cex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox4 {
+				width: 100%;
+				height: 44px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -80px 0px;
+			}
+			
+			.box .fox4 .dex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				color: black;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 172px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox4:hover .dex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox5 {
+				width: 100%;
+				height: 44px;
+				margin-top: 250px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -160px -84px;
+			}
+			
+			.box .fox5 .Eex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 471px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox5:hover .Eex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox6 {
+				width: 100%;
+				height: 46px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -80px -123px;
+			}
+			
+			.box .fox7 {
+				width: 100%;
+				height: 44px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -120px -125px;
+			}
+			
+			.box .fox7 .fex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 561px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox7:hover .fex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox7:hover .fex:hover {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="header-container">
+				<a class="return" href="首页.html">返回首页</a>
+				<a class="shop" href="cart.html">购物车</a>
+				<a class="order" href="#.html">我的订单</a>
+			</div>
+			<script>
+				if (localStorage.username) {
+					var oUsername = document.querySelector('a[name=username]');
+					var oLogout = document.querySelector('.logout');
+					oUsername.innerText = localStorage.username;
+					oUsername.style.display = 'inline';
+					oLogout.style.display = 'inline';
+				} else {
+					var oRegister = document.querySelector('.register');
+					var oLogin = document.querySelector('.login');
+					oRegister.style.display = 'inline';
+					oLogin.style.display = 'inline';
+				}
+			</script>
+			<script src="js/mayajax.js" charset="utf-8"></script>
+			</script>
+
+			<ul id="cat" class="cat"></ul>
+			<script>
+				var oCat = document.querySelector('#cat');
+				myajax.get('http://h6.duchengjiu.top/shop/api_cat.php', {}, function(error, responseText) {
+					var json = JSON.parse(responseText);
+					var data = json.data;
+					for (var i = 0; i < data.length; i++) {
+						var obj = data[i];
+						oCat.innerHTML += `<li><a href="商品列表.html?cat_id=${obj.cat_id}">${obj.cat_name}</a></li>`;
+					}
+				});
+			</script>
+
+		</header>
+
+		<main>
+			<ul id="hot-goods">
+			</ul>
+		</main>
+		<script src="js/myajax.js" charset="utf-8"></script>
+		<script>
+			var search_text = getQueryString('search_text');
+			var oGoods = document.querySelector('#hot-goods');
+			myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
+					search_text: search_text
+				},
+				function(err, responseText) {
+					var json = JSON.parse(responseText);
+					console.log(json);
+					var data = json.data;
+					if (data.length === 0) {
+						oGoods.innerHTML = "未搜索到商品, <span id='second'>5</span>秒后跳回首页";
+						var oSecond = oGoods.querySelector('#second');
+						var timer = setInterval(() => {
+							var second = parseInt(oSecond.innerText);
+							oSecond.innerText = --second;
+						}, 1000);
+						setTimeout(() => {
+							clearInterval(timer);
+							location.href = '/';
+						}, 5000);
+						return;
+					}
+					for (var i = 0; i < data.length; i++) {
+						var obj = data[i];
+						oGoods.innerHTML += `<li class="goods"><a href="goods.html?goods_id=${obj.goods_id}">
+          <div><img src="${obj.goods_thumb}" /></div>
+          <div>${obj.goods_name}</div>
+          <div>${obj.price}</div></a>
+        </li>`;
+					}
+				});
+		</script>
+		<div class="header">
+			<img src="../img/timg.jpg" style="width: 100%; height: 150px;" />
+		</div>
+		<div class="box">
+			<div class="fox1">
+				<div class="aex">
+					我的足迹
+				</div>
+			</div>
+			<div class="fox2">
+				<div class="bex">
+					电子劵
+				</div>
+			</div>
+			<div class="fox3">
+				<a href="商品列表.html">
+					<div class="cex">
+						商品列表
+					</div>
+				</a>
+			</div>
+			<div class="fox4">
+				<a href="商品列表.html">
+					<div class="dex">
+						热门品牌
+					</div>
+				</a>
+			</div>
+			<div class="fox5">
+				<div class="Eex">
+					会员反馈
+				</div>
+			</div>
+			<div class="fox6"></div>
+			<div class="fox7">
+				<div class="fex">
+					返回顶部
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				var oBack = document.querySelector('.fox7');
+				window.onscroll = function() {}
+
+				oBack.onclick = function() {
+					scrollAnimate(0, 500);
+				}
+
+				function scrollAnimate(target, timer) {
+					var interval = 20;
+					var frame = 0;
+					var frames = timer / interval;
+					var start = document.body.scrollTop || document.documentElement.scrollTop;
+					var distance = target - start;
+					var timer;
+					clearInterval(timer);
+					timer = setInterval(function() {
+						frame++;
+						if (frame >= frames) {
+							clearInterval(timer);
+						}
+						document.body.scrollTop = document.documentElement.scrollTop = CubicEaseInOut(frame, start, distance, frames);
+					}, interval);
+
+					function CubicEaseInOut(t, b, c, d) {
+						if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+						return c / 2 * ((t -= 2) * t * t + 2) + b;
+					}
+				}
+			</script>
+	</body>
+
+</html>

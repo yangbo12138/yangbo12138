@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<style type="text/css">
+			.top {
+				width: 100%;
+				height: 56px;
+				background-color: deepskyblue;
+				background: url(../img/TB1bqXXXjuhSKJjSspmXXcQDpXa-1200-50.jpg)no-repeat;
+				background-size: 100%;
+			}
+			
+			.header1 {
+				width: 100%;
+				height: 40px;
+				position: relative;
+				background: #f8f8f8;
+			}
+			
+			.header1 .header-con {
+				position: absolute;
+				color: black;
+				text-align: center;
+				left: 200px;
+				margin-top: 10px;
+				font-size: 20px;
+			}
+			
+			.header1 .header-son {
+				position: absolute;
+				left: 400px;
+				margin-top: 6px;
+			}
+			
+			.header1 .header-son ul {
+				list-style: none;
+				margin-left: 300px;
+			}
+			
+			.header1 .header-son ul li {
+				width: 70px;
+				height: 25px;
+				float: left;
+				margin-left: 30px;
+				cursor: pointer;
+				font-size: 13px;
+				text-align: center;
+				line-height: 25px;
+			}
+			
+			.header1 .header-son ul li a {
+				color: black;
+				text-decoration: none;
+			}
+			
+			.header1 .header-son ul li button {
+				color: black;
+				width: 70px;
+				height: 25px;
+				border: none;
+				background: #f8f8f8;
+			}
+			
+			.header1 .header-son ul li a:hover {
+				color: red;
+				border: 1px solid black;
+				display: block;
+				background-color: #DDDDDD;
+			}
+			
+			.header1 .header-son ul li button:hover {
+				color: red;
+				border: 1px solid black;
+				background-color: #DDDDDD;
+			}
+			
+			.header2 {
+				width: 100%;
+				height: 100px;
+			}
+			
+			.header2 .photo1 {
+				float: left;
+				width: 300px;
+				height: 100px;
+			}
+			
+			.header2 .photo1 img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.header2 .photo2 {
+				float: right;
+				width: 300px;
+				height: 100px;
+				position: absolute;
+				top: 96px;
+				left: 1045px;
+			}
+			
+			.header2 .photo2 img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.header2 .apple {
+				width: 400px;
+				height: 50px;
+				line-height: 6;
+				margin: 0 auto;
+				padding-top: 0px;
+			}
+			
+			.header2 .apple .search-text {
+				width: 400px;
+				height: 42px;
+				margin-top: 5px;
+				padding-left: 20px;
+				position: absolute;
+				left: 400px;
+				font-size: 20px;
+				top: 110px;
+				border: 5px solid red;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.header2 .apple .search-btn {
+				width: 60px;
+				position: absolute;
+				left: 803px;
+				top: 114px;
+				height: 55px;
+				margin-left: -1px;
+				cursor: pointer;
+				background: url(../img/TB18G6pKVXXXXcnXpXXXXXXXXXX-44-44.png) no-repeat 10px 10px;
+				background-color: red;
+				background-size: 65%;
+				border: 1px solid red;
+				border-radius: 0 5px 5px 0;
+			}
+			
+			.header3 {
+				width: 100%;
+				height: 350px;
+				margin-top: -50px;
+				background: url(../img/hahaha.jpg) no-repeat 0 0;
+				background-size: 100%;
+				/*filter: alpha(Opacity=80);*/
+				/*-moz-opacity: 0.5;*/
+			}
+			/*.header3 .head{
+				width: 188px;
+				height: 360px;
+				float: left;
+				background-color: yellow;
+			}*/
+			.header3 .carousel {
+				width: 780px;
+				height: 350px;
+				/*float: left;*/
+				
+				margin: 50px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.header3 .carousel ul {
+				list-style: none;
+			}
+			
+			.header3 .carousel ul li {
+				display: none;
+			}
+			
+			.header3 .carousel ul li.current {
+				display: block;
+			}
+			
+			.header3 .carousel ul li.current img {
+				width: 750px;
+				height: 350px;
+			}
+			
+			.header3 .carousel span {
+				position: absolute;
+				width: 55px;
+				height: 55px;
+				top: 130px;
+				cursor: pointer;
+			}
+			
+			.header3 .carousel .leftBtn {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: rgba(250, 0, 0, 0.5);
+				left: 10px;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			.header3 .carousel .rightBtn {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: rgba(250, 0, 0, 0.5);
+				text-align: center;
+				line-height: 30px;
+				right: 40px;
+			}
+			
+			.header3 .carousel .circles {
+				position: absolute;
+				bottom: 0px;
+				width: 200px;
+				height: 17px;
+				left: 50%;
+				margin-left: -100px;
+			}
+			
+			.header3 .carousel .circles ol {
+				list-style: none;
+			}
+			
+			.header3 .carousel .circles ol li {
+				float: left;
+				width: 17px;
+				height: 17px;
+				margin-right: 13px;
+				background-color: gold;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+			
+			.header3 .carousel .circles ol li.current {
+				background-color: purple;
+			}
+			
+			.picture img {
+				width: 100%;
+				height: 80px;
+			}
+			
+			.header4 {
+				width: 100%;
+				height: 40px;
+				background: #FB3434;
+			}
+			
+			.header4 ul {
+				list-style: none;
+			}
+			
+			.header4 ul li {
+				float: left;
+				margin-top: 10px;
+				margin-left: 85px;
+				cursor: pointer;
+			}
+			
+			.header4 ul li a {
+				color: black;
+				font-size: 20px;
+				text-decoration: none;
+			}
+			
+			.header4 ul li a:hover {
+				color: white;
+			}
+			
+			.header5 {
+				width: 100%;
+				height: 1100px;
+				background: ghostwhite;
+			}
+			
+			.header6 {
+				width: 100%;
+				height: 155px;
+				position: fixed;
+				bottom: 0px;
+				background-color: rgba(0, 0, 0, 0.2)
+			}
+			
+			.header6 img {
+				display: block;
+				margin: 0 auto;
+				width: 800px;
+			}
+			
+			.header6 .cha {
+				background-color: white;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+				float: right;
+				margin-right: 40px;
+				background: url(../img/asd.png) no-repeat -51px -171px;
+			}
+			
+			.box {
+				position: fixed;
+				right: 0px;
+				top: 50px;
+				z-index: 101;
+				width: 36px;
+				height: 600px;
+				background: grey;
+			}
+			
+			.box .fox1 {
+				width: 100%;
+				height: 45px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -160px 0px;
+			}
+			
+			.box .fox1 .aex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 12px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox1:hover .aex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox2 {
+				width: 100%;
+				height: 44px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -160px -44px;
+			}
+			
+			.box .fox2 .bex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 62px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox2:hover .bex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox3 {
+				width: 100%;
+				height: 44px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -120px 0px;
+			}
+			
+			.box .fox3 .cex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				color: black;
+				top: 122px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox3:hover .cex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox4 {
+				width: 100%;
+				height: 44px;
+				margin-top: 10px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -80px 0px;
+			}
+			
+			.box .fox4 .dex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				color: black;
+				left: 36px;
+				top: 172px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox4:hover .dex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox5 {
+				width: 100%;
+				height: 44px;
+				margin-top: 250px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -160px -84px;
+			}
+			
+			.box .fox5 .Eex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 471px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox5:hover .Eex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox6 {
+				width: 100%;
+				height: 46px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -80px -123px;
+			}
+			
+			.box .fox7 {
+				width: 100%;
+				height: 44px;
+				background-color: blueviolet;
+				background: url(../img/asd.png) no-repeat -120px -125px;
+			}
+			
+			.box .fox7 .fex {
+				width: 115px;
+				height: 35px;
+				background: white;
+				position: absolute;
+				border: 1px solid gainsboro;
+				left: 36px;
+				top: 561px;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 5px 0 0 5px;
+			}
+			
+			.box .fox7:hover .fex {
+				left: -117px;
+				background-color: gainsboro;
+			}
+			
+			.box .fox7:hover .fex:hover {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+
+		</div>
+		<div class="header1">
+			<div class="header-con">欢迎来到商城</div>
+			<div class="header-son">
+				<ul>
+					<li><button class="register" id="register">注册</button></li>
+					<li><button class="login" id="login">登录</button></li>
+					<li><a href="#">我的订单</a></li>
+					<li><a href="#">收藏夹</a></li>
+					<li><a href="首页.html">首页</a></li>
+					<li><a href="cart.html">购物车</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="modal" id="modal">
+			<div class="container">
+				<div class="hd">注册<span class="close">关闭</span></div>
+				<div class="bd">
+					<form>
+						<div class="login-title">注册账号</div>
+						
+						<div class="tubiao1">
+						</div>
+						<input type="text" class="username" id="username" placeholder="会员名/邮箱/手机号" />
+						
+						
+							
+						<div class="tubiao2">
+						</div>
+						<input type="text" class="password" id="password" placeholder="请输入6位以上的密码" />
+						<button type="text" class="add" id="add">注册</button>
+                         <input type="checkbox" class="checked" checked="checked" />
+                        <div class="addas">
+                         	我已阅读并接受 <span>《服务条款》</span>、<span>《隐私条款》</span>等。
+                         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modala" id="modala">
+			<div class="containera">
+				<div class="hda">登录<span class="closea">关闭</span></div>
+				<div class="bda">
+					<form>
+						<div class="registera">登录账号</div>
+						
+						<div class="tubiao3">
+						</div>
+						<input type="text" class="usernamea" id="usernamea" name="usernamea" placeholder="请输入正确的用户名" />
+						
+						<div class="tubiao4">
+						</div>
+						<input type="text" class="passworda" id="passworda" name="passworda" placeholder="请输入正确的密码" />
+						<button type="text" class="adda" id="adda">登录</button><br />
+                        <input type="checkbox" class="checkeda" checked="checked" />
+                        <div class="addat">
+                         	我已阅读并接受 <span>《服务条款》</span>、<span>《隐私条款》</span>等。
+                         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="js/myajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/tanchuhuang.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var Register = document.getElementById("register");
+			var oModal = document.getElementById("modal");
+			var modal = new Modal('.register');
+			var oAdd = document.querySelector('.add');
+			var oUsername = document.querySelector('#username');
+			var oPassword = document.querySelector('#password');
+			var Login = document.getElementById("login");
+			var oModala = document.getElementById("modala");
+			var amodal = new Modal('.login');
+			var oAdda = document.querySelector('.adda');
+			var oUsernamea = document.querySelector('input[name=usernamea]');
+			var oPassworda = document.querySelector('input[name=passworda]');
+			var oClosea = document.querySelector(".closea")
+			Register.onclick = function() {
+				oModal.style.display = "block";
+			}
+			oAdd.onclick = function() {
+				myajax.post('http://h6.duchengjiu.top/shop/api_user.php', {
+					status: 'register',
+					username: oUsername.value,
+					password: oPassword.value
+				}, function(err, responseText) {
+					var json = JSON.parse(responseText);
+					console.log(json);
+					if (json.code === 0) {
+						modal.hide();
+					}
+				});
+			}
+			Login.onclick = function() {
+				oModala.style.display = "block";
+			}
+			oClosea.onclick = function() {
+				oModala.style.display = "none";
+			}
+			oAdda.onclick = function() {
+				myajax.post('http://h6.duchengjiu.top/shop/api_user.php', {
+						status: 'login',
+						username: oUsernamea.value,
+						password: oPassworda.value
+					},
+					function(error, responseText) {
+						var json = JSON.parse(responseText);
+
+						localStorage.token = json.data.token;
+						localStorage.username = json.data.username;
+
+						if (json.code === 0) {
+							amodal.hide();
+							oModala.style.display = "none";
+							console.log(json)
+							console.log(Login.innerHTML)
+							Login.innerHTML = oUsernamea.value;
+						}
+					});
+			}
+		</script>
+		</div>
+		<div class="header2">
+			<div class="photo1">
+				<img src="../img/TB1yRiUQVXXXXaAXFXXXXXXXXXX-620-220.png" />
+			</div>
+			<div class="apple">
+				<input type="text" class="search-text" id="search-text" placeholder="请输入要搜索的商品名称">
+				<button class="search-btn" id="search-btn"></button>
+			</div>
+			<div class="photo2">
+				<img src="../img/TB13Gu9OFXXXXc1apXXXXXXXXXX-620-220.png" />
+			</div>
+		</div>
+		<script>
+			var oSearch = document.querySelector(".search-text");
+			var Search = document.querySelector(".search-btn")
+			oSearch.onkeyup = function(event) {
+				if (event.keyCode === 13) {
+					location.href = 'search.html?search_text=' + this.value;
+				}
+			}
+			Search.onclick = function() {
+				location.href = 'search.html?search_text=' + oSearch.value;
+			}
+		</script>
+		<div class="header3">
+			<!--<div class="head"></div>-->
+				
+			<div class="carousel">
+				<div class="imagesList" id="imagesList">
+					<ul>
+						<li class="current">
+							<a href="#"> <img src="../img/00.jpg" alt=""> </a>
+						</li>
+						<li>
+							<a href="#"> <img src="../img/01.jpg" alt=""> </a>
+						</li>
+						<li>
+							<a href="#"> <img src="../img/02.jpg" alt=""> </a>
+						</li>
+						<li>
+							<a href="#"> <img src="../img/03.jpg" alt=""> </a>
+						</li>
+						<li>
+							<a href="#"> <img src="../img/04.jpg" alt=""> </a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="btns">
+					<span class="leftBtn" id="carousel_leftBtn">左</span>
+					<span class="rightBtn" id="carousel_rightBtn">右</span>
+				</div>
+				<div class="circles" id="circles">
+					<ol>
+						<li class="current"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ol>
+				</div>
+			</div>
+			<script>
+				var index = 0;
+				var oRightBtn = document.getElementById('carousel_rightBtn');
+				var oLeftBtn = document.getElementById('carousel_leftBtn');
+				var oImagesLists = document.getElementById('imagesList').getElementsByTagName('li');
+				var oCirclesLists = document.getElementById('circles').getElementsByTagName('li');
+
+				function zouni() {
+					index++;
+					if (index >= oImagesLists.length) {
+						index = 0;
+					}
+					move();
+				}
+				oRightBtn.onclick = function() {
+					index++;
+					if (index >= oImagesLists.length) {
+						index = 0;
+					}
+					move();
+				}
+				oLeftBtn.onclick = function() {
+					index--;
+					if (index < 0) {
+						index = oImagesLists.length - 1;
+					}
+					move();
+				}
+				for (var i = 0; i < oCirclesLists.length; i++) {
+					(function(i) {
+						oCirclesLists[i].onmouseover = function() {
+							index = i;
+							move();
+						}
+					})(i);
+				}
+
+				function move() {
+					for (var i = 0; i < oImagesLists.length; i++) {
+						oImagesLists[i].className = '';
+					}
+					oImagesLists[index].className = 'current';
+
+					for (var i = 0; i < oCirclesLists.length; i++) {
+						oCirclesLists[i].className = '';
+					}
+					oCirclesLists[index].className = 'current';
+				}
+				setInterval(zouni, 3000);
+			</script>
+
+		</div>
+		<div class="picture">
+			<img src="../img/TB1EaDqOVXXXXc1XVXXXXXXXXXX-2380-160.png" />
+		</div>
+		<div class="header4">
+			<ul id="cat" class="cat"></ul>
+			<script>
+				var oCat = document.querySelector('#cat');
+				myajax.get('http://h6.duchengjiu.top/shop/api_cat.php', {}, function(error, responseText) {
+					var json = JSON.parse(responseText);
+					var data = json.data;
+					for (var i = 0; i < data.length; i++) {
+						var obj = data[i];
+						oCat.innerHTML += `<li><a href="商品列表.html?cat_id=${obj.cat_id}">${obj.cat_name}</a></li>`;
+					}
+				});
+			</script>
+
+		</div>
+		<div class="header5">
+			<script src="js/myajax.js" charset="utf-8"></script>
+			<main>
+				<ul id="hot-goods"></ul>
+			</main>
+			<script>
+				var oGoods = document.querySelector('#hot-goods');
+				myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {}, function(err, responseText) {
+					var json = JSON.parse(responseText);
+					console.log(json);
+					var data = json.data;
+					for (var i = 0; i < data.length; i++) {
+						var obj = data[i];
+						oGoods.innerHTML += `<li class="goods"><a href="goods.html?goods_id=${obj.goods_id}">
+                    <div><img src="${obj.goods_thumb}" /></div>
+                    <div>${obj.goods_name}</div>
+                    <div>${obj.price}</div></a>
+                </li>`;
+					}
+				});
+			</script>
+		</div>
+		<div class="header6">
+			<div class="cha"></div>
+			<img src="../img/bottom-ad-new_786deac.png" />
+			<script type="text/javascript">
+				var oHeaders = document.querySelector(".header6");
+				var oCha = document.querySelector(".cha");
+				oCha.onclick = function() {
+					oHeaders.style.display = "none";
+				}
+			</script>
+		</div>
+		<div class="header7">
+			<img src="../img/timg.jpg" style="width: 100%; height: 150px;" />
+		</div>
+		<div class="box">
+			<div class="fox1">
+				<div class="aex">
+					我的足迹
+				</div>
+			</div>
+			<div class="fox2">
+				<div class="bex">
+					电子劵
+				</div>
+			</div>
+			<div class="fox3">
+				<a href="商品列表.html">
+					<div class="cex">
+						商品列表
+					</div>
+				</a>
+			</div>
+			<div class="fox4">
+				<a href="商品列表.html">
+					<div class="dex">
+						热门品牌
+					</div>
+				</a>
+			</div>
+			<div class="fox5">
+				<div class="Eex">
+					会员反馈
+				</div>
+			</div>
+			<div class="fox6">
+				
+			</div>
+			<div class="fox7">
+				<div class="fex">
+					返回顶部
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				var oBack = document.querySelector('.fox7');
+				window.onscroll = function() {}
+
+				oBack.onclick = function() {
+					scrollAnimate(0, 500);
+				}
+
+				function scrollAnimate(target, timer) {
+					var interval = 20;
+					var frame = 0;
+					var frames = timer / interval;
+					var start = document.body.scrollTop || document.documentElement.scrollTop;
+					var distance = target - start;
+					var timer;
+					clearInterval(timer);
+					timer = setInterval(function() {
+						frame++;
+						if (frame >= frames) {
+							clearInterval(timer);
+						}
+						document.body.scrollTop = document.documentElement.scrollTop = CubicEaseInOut(frame, start, distance, frames);
+					}, interval);
+
+					function CubicEaseInOut(t, b, c, d) {
+						if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+						return c / 2 * ((t -= 2) * t * t + 2) + b;
+					}
+				}
+			</script>
+
+	</body>
+
+</html>
